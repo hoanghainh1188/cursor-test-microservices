@@ -1,0 +1,18 @@
+{
+  "name": "book-management-microservices",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "client"
+  ],
+  "scripts": {
+    "start:book": "pnpm --filter book-service start",
+    "start:category": "pnpm --filter category-service start",
+    "start:client": "pnpm --filter client start",
+    "dev": "npx concurrently \"pnpm run start:book\" \"pnpm run start:category\" \"pnpm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
